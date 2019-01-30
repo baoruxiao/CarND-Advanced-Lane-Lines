@@ -52,7 +52,7 @@ This part is written under `LaneDetector::cameraCalib`.
 Lastly, using camera matrix and distortion coefficients to undistort raw input image.
 This part is written under `LaneDetector::undistImage`.
 
-![alt text][example0]
+![alt text][image1]
 
 ### Pipeline (single images)
 
@@ -60,14 +60,14 @@ This part is written under `LaneDetector::undistImage`.
 
 To demonstrate this step, I will describe how I apply the distortion correction to one of the test images like this one
 see following image row 1 and column 2
-![alt text][example1]
+![alt text][image2]
 
 #### 2. Describe how (and identify where in your code) you used color transforms, gradients or other methods to create a thresholded binary image.  Provide an example of a binary image result.
 I use R (threshold: 200) channel of RGB space and S (threshold: 170) channel of HSL space and use gradient in x direction (threshold 20-100) to conduct color transform. In the threshold binary image, R, S, dx thresholded parts are visualized as R, G, B color respectively.
 This part is written under `LaneDetector::thresholding`.
 
 see following image row 1 and column 3
-![alt text][example1]
+![alt text][image2]
 
 #### 3. Describe how (and identify where in your code) you performed a perspective transform and provide an example of a transformed image.
 I use following src and dst points (by eye balling):
@@ -85,7 +85,7 @@ I verified that my perspective transform was working as expected by drawing the 
 This part is written under `LaneDetector::projectForward` and `LaneDetector::projectBackward`.
 
 see following image row 2 and column 1
-![alt text][example1]
+![alt text][image2]
 
 #### 4. Describe how (and identify where in your code) you identified lane-line pixels and fit their positions with a polynomial?
 
@@ -102,7 +102,7 @@ I use previously fitted polynomial as the center and span left and right by marg
 Above part is written under `LaneDetector::slidingWindow`.
 
 see following image row 2 and column 1
-![alt text][example1]
+![alt text][image2]
 
 #### 5. Describe how (and identify where in your code) you calculated the radius of curvature of the lane and the position of the vehicle with respect to center.
 
@@ -125,7 +125,7 @@ Above part is written under `LaneDetector::compDistToCtr`
 #### 6. Provide an example image of your result plotted back down onto the road such that the lane area is identified clearly.
 
 see following image row 2 and column 2 and 3
-![alt text][example2]
+![alt text][image3]
 
 ---
 
